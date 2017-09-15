@@ -2,6 +2,8 @@ package org.aaf.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import java.util.spi.TimeZoneNameProvider;
 
 public class RecadoDTO implements Serializable{
 
@@ -37,6 +39,22 @@ public class RecadoDTO implements Serializable{
     private String opcao5;
     
     private String opcao6;
+    
+    private byte[] filePergunta;
+
+	private byte[] filePerguntaUnder;
+
+    private String respostaAberta;
+    
+    private String descricaoUnder;
+
+	private int fontSizeQuestion;
+
+	private boolean bigQuestion;
+	
+	private boolean respostaBooleana;
+	
+	private int tipoDestinatario;
     
     @Override
     public int hashCode() {
@@ -170,5 +188,68 @@ public class RecadoDTO implements Serializable{
 	public void setOpcao6(String opcao6) {
 		this.opcao6 = opcao6;
 	}
-	
+
+	public byte[] getFilePergunta() {
+		return filePergunta;
+	}
+
+	public void setFilePergunta(byte[] filePergunta) {
+		this.filePergunta = filePergunta;
+	}
+
+	public byte[] getFilePerguntaUnder() {
+		return filePerguntaUnder;
+	}
+
+	public void setFilePerguntaUnder(byte[] filePerguntaUnder) {
+		this.filePerguntaUnder = filePerguntaUnder;
+	}
+
+	public String getRespostaAberta() {
+		return respostaAberta;
+	}
+
+	public void setRespostaAberta(String respostaAberta) {
+		this.respostaAberta = respostaAberta;
+	}
+
+	public int getFontSizeQuestion() {
+		return fontSizeQuestion;
+	}
+
+	public void setFontSizeQuestion(int fontSizeQuestion) {
+		this.fontSizeQuestion = fontSizeQuestion;
+	}
+
+	public String getDescricaoUnder() {
+		return descricaoUnder;
+	}
+
+	public void setDescricaoUnder(String descricaoUnder) {
+		this.descricaoUnder = descricaoUnder;
+	}
+
+	public boolean isBigQuestion() {
+		return bigQuestion;
+	}
+
+	public void setBigQuestion(boolean bigQuestion) {
+		this.bigQuestion = bigQuestion;
+	}
+
+	public boolean isRespostaBooleana() {
+		return respostaBooleana;
+	}
+
+	public void setRespostaBooleana(boolean respostaBooleana) {
+		this.respostaBooleana = respostaBooleana;
+	}
+
+	public int getTipoDestinatario() {
+		return tipoDestinatario;
+	}
+
+	public void setTipoDestinatario(int tipoDestinatario) {
+		this.tipoDestinatario = tipoDestinatario;
+	}
 }

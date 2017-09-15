@@ -24,6 +24,8 @@ public class MemberDTO implements Serializable {
 	private String senha;
 	
 	private int tipoMembro;
+	
+	private String tokenFCM;
 
 	public MemberDTO() {
 	}
@@ -114,6 +116,14 @@ public class MemberDTO implements Serializable {
 
 	public void setTipoMembro(int tipoMembro) {
 		this.tipoMembro = tipoMembro;
+	}
+
+	public String getTokenFCM() {
+		return tokenFCM;
+	}
+
+	public void setTokenFCM(String tokenFCM) {
+		this.tokenFCM = tokenFCM;
 	}
 
 }
