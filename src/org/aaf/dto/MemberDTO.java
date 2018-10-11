@@ -26,6 +26,18 @@ public class MemberDTO implements Serializable {
 	private int tipoMembro;
 	
 	private String tokenFCM;
+	
+	private String telefone;
+	
+	private String idCrianca1;
+	
+	private String idCrianca2;
+
+	private String idCrianca3;
+	
+	private String idCrianca4;
+	
+	private String idCrianca5;
 
 	public MemberDTO() {
 	}
@@ -124,6 +136,54 @@ public class MemberDTO implements Serializable {
 
 	public void setTokenFCM(String tokenFCM) {
 		this.tokenFCM = tokenFCM;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getIdCrianca1() {
+		return idCrianca1;
+	}
+
+	public void setIdCrianca1(String idCrianca1) {
+		this.idCrianca1 = idCrianca1;
+	}
+
+	public String getIdCrianca2() {
+		return idCrianca2;
+	}
+
+	public void setIdCrianca2(String idCrianca2) {
+		this.idCrianca2 = idCrianca2;
+	}
+
+	public String getIdCrianca3() {
+		return idCrianca3;
+	}
+
+	public void setIdCrianca3(String idCrianca3) {
+		this.idCrianca3 = idCrianca3;
+	}
+
+	public String getIdCrianca4() {
+		return idCrianca4;
+	}
+
+	public void setIdCrianca4(String idCrianca4) {
+		this.idCrianca4 = idCrianca4;
+	}
+
+	public String getIdCrianca5() {
+		return idCrianca5;
+	}
+
+	public void setIdCrianca5(String idCrianca5) {
+		this.idCrianca5 = idCrianca5;
 	}
 
 }

@@ -11,6 +11,7 @@ org\aaf\dto\StadiumDTO.class
 org\aaf\model\enuns\StaffEnum.class
 org\aaf\dto\TrainningDTO.class
 org\aaf\model\enuns\FanMoodEnum.class
+org\aaf\dto\AlunoDTO.class
 org\aaf\dto\LeagueDTO.class
 org\aaf\dto\UserDTO.class
 org\aaf\dto\CountryDTO.class
