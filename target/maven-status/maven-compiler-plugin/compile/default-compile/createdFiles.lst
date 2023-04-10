@@ -3,6 +3,7 @@ org\aaf\model\enuns\IdionsEnum.class
 org\aaf\dto\LineUpDTO.class
 org\aaf\model\enuns\RateEnum.class
 org\aaf\dto\StadiumDTO.class
+br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AvaliacaoDTO.class
 org\aaf\model\enuns\StaffEnum.class
 org\aaf\dto\TrainningDTO.class
 org\aaf\dto\nfs\NF.class
@@ -20,13 +21,16 @@ org\aaf\dto\nfs\Contants.class
 org\aaf\dto\TeamDTO.class
 org\aaf\dto\nfs\ListaItensNFS.class
 org\aaf\dto\AlunoAulaDTO.class
+br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\RetornoAlunosAvaliacaoDTO.class
 org\aaf\model\enuns\FanMoodEnum.class
 org\aaf\dto\AlunoDTO.class
 org\aaf\dto\LeagueDTO.class
 org\aaf\dto\UserDTO.class
 org\aaf\dto\EconomyDTO.class
+br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AlunoDTO.class
 org\aaf\dto\MemberDTO.class
 org\aaf\dto\nfs\NFSeDTO.class
 org\aaf\dto\PlayerDTO.class
 org\aaf\model\enuns\SponsorMoodEnum.class
+br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AlunoAvaliacaoDTO.class
 org\aaf\dto\nfs\PrestadorNFS.class

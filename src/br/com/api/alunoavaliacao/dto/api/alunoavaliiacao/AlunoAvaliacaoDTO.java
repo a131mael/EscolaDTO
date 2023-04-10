@@ -16,6 +16,8 @@ public class AlunoAvaliacaoDTO implements Serializable{
 	private AvaliacaoDTO avaliacao;
 
 	private float nota;
+	
+	private Integer faltas;
 
 	private Integer anoLetivo;
 
@@ -58,5 +60,14 @@ public class AlunoAvaliacaoDTO implements Serializable{
 	public void setAnoLetivo(Integer anoLetivo) {
 		this.anoLetivo = anoLetivo;
 	}
+
+	public Integer getFaltas() {
+		return faltas;
+	}
+
+	public void setFaltas(Integer faltas) {
+		this.faltas = faltas;
+	}
+
 
 }

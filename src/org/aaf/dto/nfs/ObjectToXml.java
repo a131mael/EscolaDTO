@@ -65,7 +65,7 @@ public class ObjectToXml implements Serializable {
 		
 		nfs.setTeste("1");
 
-		marshallerObj.marshal(nfs, new FileOutputStream("C:\\Sicoobnet\\RetornoCNAB\\question.xml"));
+		marshallerObj.marshal(nfs, new FileOutputStream("C:\\Sicoobnet\\RetornoCNAB\\questio2n.xml"));
 		
 		ObjectToXml ob = new ObjectToXml();
 		ob.testMultiPartIndividualFileToLarge();
@@ -81,7 +81,7 @@ public class ObjectToXml implements Serializable {
 	          ContentBody cbFile = new FileBody(file);
 	          mpEntity.addPart("f1", cbFile);
 	          mpEntity.addPart("login", new StringBody("03660921000179"));
-	          mpEntity.addPart("senha", new StringBody("stratus01"));
+	          mpEntity.addPart("senha", new StringBody("Stratus#01"));
 	          mpEntity.addPart("cidade", new StringBody("8223"));
 	          httppost.setEntity(mpEntity);
 	          System.out.println("executing request " + httppost.getRequestLine());

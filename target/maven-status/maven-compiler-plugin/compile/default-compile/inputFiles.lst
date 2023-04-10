@@ -1,5 +1,6 @@
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\TrainningDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\NF.java
+C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\RetornoAlunosAvaliacaoDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\RecadoDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\PlayerDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\RecadoDestinatarioDTO.java
@@ -11,6 +12,7 @@ C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\Prestad
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\TeamLeagueDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\model\enuns\StaffEnum.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\model\enuns\FanMoodEnum.java
+C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AvaliacaoDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\model\enuns\IdionsEnum.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\AlunoDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\CountryDTO.java
@@ -18,6 +20,7 @@ C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\AlunoAulaDT
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\Contants.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\ObjectToXml.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\MatchDTO.java
+C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AlunoAvaliacaoDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\StadiumDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\MemberDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\NFSeDTO.java
@@ -27,6 +30,7 @@ C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\UserDTO.jav
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\AulaDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\TomadorNFS.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\StaffDTO.java
+C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AlunoDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\RegionDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\LineUpDTO.java
 C:\Users\Abimael Fidencio\Documents\GitHub\EscolaDTO\src\org\aaf\dto\nfs\ListaItensNFS.java
