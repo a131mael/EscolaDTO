@@ -1,3 +1,4 @@
+org\aaf\dto\DividaEnviar.class
 org\aaf\dto\RecadoDestinatarioDTO.class
 org\aaf\model\enuns\IdionsEnum.class
 org\aaf\dto\LineUpDTO.class
@@ -12,7 +13,9 @@ org\aaf\dto\MatchDTO.class
 org\aaf\dto\nfs\ObjectToXml.class
 org\aaf\dto\nfs\ItemNFS.class
 org\aaf\dto\AulaDTO.class
+org\aaf\dto\EnviarTituloResponse.class
 org\aaf\dto\nfs\TomadorNFS.class
+org\aaf\dto\StatusResponse.class
 org\aaf\dto\StaffDTO.class
 org\aaf\dto\RegionDTO.class
 org\aaf\dto\TeamLeagueDTO.class
@@ -25,11 +28,13 @@ br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\RetornoAlunosAvaliacaoDTO.clas
 org\aaf\model\enuns\FanMoodEnum.class
 org\aaf\dto\AlunoDTO.class
 org\aaf\dto\LeagueDTO.class
+org\aaf\dto\RetornoEnvioContratoDTO.class
 org\aaf\dto\UserDTO.class
 org\aaf\dto\EconomyDTO.class
 br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AlunoDTO.class
 org\aaf\dto\MemberDTO.class
 org\aaf\dto\nfs\NFSeDTO.class
+org\aaf\dto\DevedorEnviar.class
 org\aaf\dto\PlayerDTO.class
 org\aaf\model\enuns\SponsorMoodEnum.class
 br\com\api\alunoavaliacao\dto\api\alunoavaliiacao\AlunoAvaliacaoDTO.class

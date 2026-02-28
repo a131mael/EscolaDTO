@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" elementFormDefault="qualified" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"> 
+    
+    <xs:include schemaLocation="wne_model_xsd_nota_fiscal_base_solicitacao_cancelamento.xsd" />       
+    
+    <xs:element name="solicitacao_cancelamento" type="tipoSolicitacao" />
+    <xs:complexType name="tipoSolicitacao">
+        <xs:all>     
+            <xs:element ref="prestador" />
+            <xs:element ref="documentos" />
+        </xs:all>
+
+        <xs:attribute name="id" use="optional"/>
+        <xs:attribute name="ID" use="optional"/>
+        <xs:attribute name="Id" use="optional"/>
+        <xs:attribute name="iD" use="optional"/>
+    </xs:complexType>
+    
+</xs:schema> 

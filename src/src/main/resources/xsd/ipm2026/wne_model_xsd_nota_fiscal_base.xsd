@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" >
+
+    <xs:include schemaLocation="wne_model_xsd_nota_fiscal_reforma_tributo_consumo.xsd" />
+
+    <xs:simpleType name="tipoCpfCnpj">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{9,14}" />
+        </xs:restriction>
+    </xs:simpleType> 
+
+    <xs:simpleType name="tipoCnpj">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{14}" />
+        </xs:restriction>
+    </xs:simpleType> 
+
+    <xs:simpleType name="tipoNomeRazao">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType> 
+
+    <xs:simpleType name="tipoData">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}/\d{2}/\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>     
+
+    <xs:simpleType name="tipoCidade"> 
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{1,7}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoDDD">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="999" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoEstado">        
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100"/>
+            <xs:minLength value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoValor">
+        <xs:restriction base="xs:string">		
+            <xs:pattern value="0|0,0|0,00|[0-9]{1}\d{0,12}([,]\d{2})?|[0-9]{1}\d{0,2}(\.\d{3})+([,]\d{2})?|[0-9]{1}\d{0,12}([,]\d{1})" />
+        </xs:restriction>
+    </xs:simpleType>    
+	
+    <xs:simpleType name="tipoSituacao">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="E" /> 
+            <xs:enumeration value="C" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoAliquota">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{1,13}[,]\d{1,16}|\d{1,13}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoPessoa">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="F" />
+            <xs:enumeration value="J" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoPessoaTomador">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="E" />
+            <xs:enumeration value="F" />
+            <xs:enumeration value="J" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoTributaMunicipio">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="0" />
+            <xs:enumeration value="S" />
+            <xs:enumeration value="s" />
+            <xs:enumeration value="N" />
+            <xs:enumeration value="n" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoAtividade">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{5,9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoTipoPagamento">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="9"/>
+        </xs:restriction>    
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoNumeroParcela">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:maxInclusive value="24"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoNumeroResidencia">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoPisCofins">
+        <xs:all>
+            <xs:element name="cst" type="tsCst" minOccurs="1" maxOccurs="1" />
+            <xs:element name="tipo_retencao" type="tsTipoRetencao" minOccurs="0" maxOccurs="1" />
+            <xs:element name="base_calculo" type="tipoValor" minOccurs="0" maxOccurs="1" />
+            <xs:element name="aliquota_pis" type="tipoValor" minOccurs="0" maxOccurs="1" />
+            <xs:element name="aliquota_cofins" type="tipoValor" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+
+    <xs:simpleType name="tsCst">
+        <xs:restriction base="xs:integer" >
+            <xs:enumeration value="01" />
+            <xs:enumeration value="02" />
+            <xs:enumeration value="03" />
+            <xs:enumeration value="04" />
+            <xs:enumeration value="05" />
+            <xs:enumeration value="06" />
+            <xs:enumeration value="07" />
+            <xs:enumeration value="08" />
+            <xs:enumeration value="09" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tsTipoRetencao">
+        <xs:restriction base="xs:integer" >
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="identificador" type="xs:string" />
+    <xs:element name="nfse_teste" type="xs:integer" default="0" />
+    <xs:element name="nf" type="tipoNf" /> 
+    <xs:complexType name="tipoNf">
+        <xs:all>
+            <xs:element name="serie_nfse" type="xs:integer" minOccurs="0" default="0" />
+            <xs:element name="data_nfse" type="tipoData" minOccurs="0" />
+            <xs:element name="hora_nfse" type="xs:time" minOccurs="0" />
+            <xs:element name="data_fato_gerador" type="tipoData" minOccurs="0" />
+            <xs:element name="valor_total" type="tipoValor" minOccurs="1" />
+            <xs:element name="situacao" type="tipoSituacao" minOccurs="0"/>
+            <xs:element name="numero" type="xs:integer" minOccurs="0" default="0"/>
+            <xs:element name="data" type="tipoData" minOccurs="0"/>
+            <xs:element name="hora" type="xs:time" minOccurs="0"/>
+            <xs:element name="valor_desconto" type="tipoValor" minOccurs="0" default="0"/>
+            <xs:element name="valor_ir" type="tipoValor" minOccurs="0" default="0" />
+            <xs:element name="valor_inss" type="tipoValor" minOccurs="0" default="0"/>
+            <xs:element name="valor_contribuicao_social" type="tipoValor" minOccurs="0" default="0"/>
+            <xs:element name="valor_rps" type="tipoValor" minOccurs="0" default="0"/>
+            <xs:element name="valor_pis" type="tipoValor" minOccurs="0" default="0"/>
+            <xs:element name="valor_cofins" type="tipoValor" minOccurs="0" default="0"/>
+            <xs:element name="pis_cofins" type="tipoPisCofins" minOccurs="0" maxOccurs="1" />
+            <xs:element name="observacao" type="xs:string" minOccurs="0"/>
+            <xs:element name="IBSCBS" type="tipoIBSCBS" minOccurs="0" maxOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:element name="rps" type="tipoRps" />
+    <xs:complexType name="tipoRps">
+        <xs:all>
+            <xs:element name="nro_recibo_provisorio" type="xs:string"/>
+            <xs:element name="serie_recibo_provisorio" type="xs:integer"/>
+            <xs:element name="data_emissao_recibo_provisorio" type="tipoData"/>
+            <xs:element name="hora_emissao_recibo_provisorio" type="xs:time"/>
+        </xs:all>
+    </xs:complexType>   
+    
+    <xs:element name="forma_pagamento" type="tipoFormaPagamento"/>
+    <xs:complexType name="tipoFormaPagamento">
+        <xs:all>
+            <xs:element name="tipo_pagamento" type="tipoTipoPagamento" />
+            <xs:element name="parcelas" type="tipoParcelas" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="tipoParcelas">
+        <xs:sequence>
+            <xs:element name="parcela" type="tipoParcela" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="tipoParcela">
+        <xs:all>
+            <xs:element name="numero" type="tipoNumeroParcela"/>
+            <xs:element name="valor" type="tipoValor"/>
+            <xs:element name="data_vencimento" type="tipoData"/>
+        </xs:all>
+    </xs:complexType>
+        
+    <xs:element name="prestador" type="tipoPrestador" />
+    <xs:complexType name="tipoPrestador">
+        <xs:all>
+            <xs:element name="cpfcnpj" type="tipoCpfCnpj"/>                            
+            <xs:element name="cidade" type="tipoCidade"/>
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:element name="tomador" type="tipoTomador" />
+    <xs:complexType name="tipoTomador"> 
+        <xs:all>
+            <xs:element name="endereco_informado" minOccurs="0"/>                        
+            <xs:element name="tipo" type="tipoPessoaTomador"/>
+            <xs:element name="identificador" minOccurs="0"/>
+            <xs:element name="cpfcnpj" type="tipoCpfCnpj" minOccurs="0" default="000000000"/> 
+            <xs:element name="nome_razao_social" type="tipoNomeRazao"/>
+            <xs:element name="ie" minOccurs="0"/>
+            <xs:element name="sobrenome_nome_fantasia" minOccurs="0" type="tipoNomeRazao"/>
+            <xs:element name="logradouro" minOccurs="0" type="xs:string"/>
+            <xs:element name="email" minOccurs="0" type="xs:string"/>
+            <xs:element name="numero_residencia" type="tipoNumeroResidencia" minOccurs="0"/>
+            <xs:element name="complemento" minOccurs="0" type="xs:string"/>
+            <xs:element name="ponto_referencia" minOccurs="0" type="xs:string"/>
+            <xs:element name="bairro" minOccurs="0" type="xs:string"/>
+            <xs:element name="cidade" minOccurs="0"/>
+            <xs:element name="cep" minOccurs="0" default="1000000" type="xs:integer"/>
+            <xs:element name="ddd_fone_comercial" minOccurs="0" type="tipoDDD" default="0"/>
+            <xs:element name="fone_comercial" minOccurs="0"/>
+            <xs:element name="ddd_fone_residencial" minOccurs="0" type="tipoDDD" default="0"/>
+            <xs:element name="fone_residencial" minOccurs="0"/>
+            <xs:element name="ddd_fax" minOccurs="0" type="tipoDDD" default="0"/>
+            <xs:element name="fone_fax" minOccurs="0"/>
+            <xs:element name="estado" minOccurs="0" type="tipoEstado" default="XZ"/>
+            <xs:element name="pais" minOccurs="0"/>
+            <xs:element name="siglaPais" minOccurs="0" type="xs:string"/>
+            <xs:element name="codigoIbgePais" minOccurs="0" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="tipoProfissionalParceiro">
+        <xs:sequence>
+            <xs:element name="cnpj" type="tipoCnpj" minOccurs="1" />
+            <xs:element name="razao_social" type="tipoNomeRazao" minOccurs="1" />
+            <xs:element name="valor_servico" type="tipoValor" minOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="itens" type="tipoItens" />
+    <xs:complexType name="tipoItens">
+        <xs:sequence>
+            <xs:element name="lista" type="tipoLista" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tipoLista">
+        <xs:all>
+            <xs:element name="codigo_pais_prestacao_servico" type="xs:integer" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codigo_local_prestacao_servico" type="tipoCidade"/>
+            <xs:element name="codigo_item_lista_servico" type="xs:integer"/>
+            <xs:element name="codigo_nbs" type="xs:integer" minOccurs="0" maxOccurs="1" />
+            <xs:element name="codigo_atividade" type="tipoAtividade" minOccurs="0"/> 
+            <xs:element name="descritivo"/>
+            <xs:element name="aliquota_item_lista_servico" type="tipoAliquota"/>
+            <xs:element name="situacao_tributaria" type="xs:integer"/>
+            <xs:element name="valor_tributavel" type="tipoValor" />
+            <xs:element name="valor_deducao" minOccurs="0" type="tipoValor" default="0"/>
+            <xs:element name="valor_desconto_incondicional" minOccurs="0" type="tipoValor" default="0" />
+            <xs:element name="valor_issrf" minOccurs="0" type="tipoValor" default="0"/>
+            <xs:element name="tributa_municipio_prestador" type="tipoTributaMunicipio"/>
+            <xs:element name="tributa_municipio_tomador" type="tipoTributaMunicipio" minOccurs="0" maxOccurs="1" />
+            <xs:element name="unidade_codigo" minOccurs="0"/>
+            <xs:element name="unidade_quantidade" minOccurs="0"/>
+            <xs:element name="unidade_valor_unitario" minOccurs="0"/>
+            <xs:element name="cno" minOccurs="0"/>
+            <xs:element name="profissionais" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="profissional" type="tipoProfissionalParceiro" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:all>
+    </xs:complexType>
+        
+    <xs:element name="genericos" type="tipoGenericos"/> 
+    <xs:complexType name="tipoGenericos">
+        <xs:sequence>
+            <xs:element name="linha" type="tipoLinhasGenericos" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tipoLinhasGenericos">
+        <xs:all>
+            <xs:element name="titulo" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="descricao" minOccurs="1" maxOccurs="1"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:element name="produtos" type="tipoProdutos" />
+    <xs:complexType name="tipoProdutos">
+        <xs:all>
+            <xs:element name="descricao" minOccurs="0"/>
+            <xs:element name="valor" minOccurs="0" type="tipoValor" default="0"/>
+        </xs:all>
+    </xs:complexType>
+            
+    <xs:element name="pedagio" type="tipoPedagio" />
+    <xs:complexType name="tipoPedagio">
+        <xs:all>
+            <xs:element name="cod_equipamento_automatico" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>    
+    
+</xs:schema>

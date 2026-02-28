@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" >
+        
+    <xs:simpleType name="tipoNumerico">
+        <xs:restriction base="xs:long">
+            <xs:pattern value="\d{1,19}" />
+        </xs:restriction>
+    </xs:simpleType> 
+    
+    <xs:simpleType name="tipoData">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{2}/\d{2}/\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoCpfCnpj">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{9,14}" />
+        </xs:restriction>
+    </xs:simpleType> 
+    
+    <xs:simpleType name="tipoServico">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{1}" />
+        </xs:restriction>
+    </xs:simpleType> 
+    
+    <xs:element name="pesquisa" type="tipoNf" />
+        <xs:complexType name="tipoNf">
+            <xs:all>
+                <xs:element name="codigo_autenticidade" type="xs:string" minOccurs="0" />
+                <xs:element name="data_fato_gerador_inicial" type="tipoData" minOccurs="0" />
+                <xs:element name="data_fato_gerador_final" type="tipoData" minOccurs="0" />
+                <xs:element name="numero" type="tipoNumerico" minOccurs="0" />            
+                <xs:element name="serie_nfse" type="xs:short" minOccurs="0" />
+                <xs:element name="cadastro" type="tipoNumerico" minOccurs="0" />
+                <xs:element name="tipo_servico" type="tipoServico" minOccurs="0" />
+                <xs:element name="cpfcnpj" type="tipoCpfCnpj" minOccurs="0" />
+                <xs:element name="competencia" type="xs:integer" minOccurs="0" />
+            </xs:all>
+    </xs:complexType>
+    
+</xs:schema>

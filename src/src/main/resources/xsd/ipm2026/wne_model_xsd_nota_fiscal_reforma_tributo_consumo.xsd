@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" >
+
+    <xs:simpleType name="tipoCadastroImobiliario">
+        <xs:annotation>
+            <xs:documentation>Cadastro de imóveis. Obrigatório para construção civil.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="8" />
+            <xs:maxLength value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoModoPrestServ">
+        <xs:annotation>
+            <xs:documentation>Modo de prestação do serviço: 1 - Presencial; 2 - Presencial;</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodigo2Digitos">
+        <xs:annotation>
+            <xs:documentation>Código númerico de 2 digitos</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:maxLength value="2" />
+            <xs:pattern value="[0-9]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodigo3Digitos">
+        <xs:annotation>
+            <xs:documentation>Código númerico de 3 digitos</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:maxLength value="3" />
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodigo6Digitos">
+        <xs:annotation>
+            <xs:documentation>Código númerico de 6 digitos</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:maxLength value="6" />
+            <xs:pattern value="[0-9]{6}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoCodigo8Digitos">
+        <xs:annotation>
+            <xs:documentation>Código númerico de 8 digitos</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:maxLength value="8" />
+            <xs:pattern value="[0-9]{8}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoNumerico2v2">
+        <xs:annotation>
+            <xs:documentation>Valor númerico de até 2 digitos e 2 casas decimais</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:pattern value="0|0,[0-9]{2}|[1-9]{1}[0-9]{0,1}(,[0-9]{2})?" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoNumerico3v2">
+        <xs:annotation>
+            <xs:documentation>Valor númerico de até 3 digitos e 2 casas decimais</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:pattern value="0|0,[0-9]{2}|[1-9]{1}[0-9]{0,2}(,[0-9]{2})?" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoNumerico15v2">
+        <xs:annotation>
+            <xs:documentation>Valor númerico de até 15 digitos e 2 casas decimais</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:pattern value="0|(0,[0-9]{2})|([1-9]{1}[0-9]{0,14}(,[0-9]{2}))|((([1-9][0-9]{0,2}(\.[0-9]{3})*)),[0-9]{2})" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoSimOuNao">
+        <xs:annotation>
+            <xs:documentation>Indicador binário: 0 - Não; 1 - Sim</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0" />
+            <xs:enumeration value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoTpOper">
+        <xs:annotation>
+            <xs:documentation>Tipo de Operação com Entes Governanementais ou outros serviços sobre bens imóveis: 1 - Fornecimento com pagamento posterior; 2 - Recebimento do pagamento com fornecimento já realizado; 3 - Fornecimento com pagamento já realizado; 4 - Recebimento do pagamento com fornecimento posterior; 5 - Fornecimento e recebimento do pagamento concomitantes.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+            <xs:enumeration value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+
+	<xs:simpleType name="tipoChaveAcessoNfse">
+		<xs:restriction base="xs:string">
+            <xs:minLength value="50" />
+            <xs:pattern value="[0-9]{0,50}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+    <xs:simpleType name="tipoFinalidadeNFSe">
+        <xs:annotation>
+            <xs:documentation>Indicador da finalidade da emissão de NFS-e: 0 - NFS-e regular</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoEnteGov">
+        <xs:annotation>
+            <xs:documentation>Tipo de ente governamental. Para administração pública direta e suas autarquias e fundações: 1 - União; 2 - Estado; 3 - Distrito Federal; 4 - Município;</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto1_30">
+        <xs:annotation>
+            <xs:documentation>Texto de tamanho 1 a 30 caracteres</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto1_60">
+        <xs:annotation>
+            <xs:documentation>Texto de tamanho 1 a 60 caracteres</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="60" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto1_255">
+        <xs:annotation>
+            <xs:documentation>Texto de tamanho 1 a 255 caracteres</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto1_156">
+        <xs:annotation>
+            <xs:documentation>Texto de tamanho 1 a 156 caracteres</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="156" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto1_11">
+        <xs:annotation>
+            <xs:documentation>Texto de tamanho 1 a 11 caracteres</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="1" />
+            <xs:maxLength value="11" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tipoTexto8">
+        <xs:annotation>
+            <xs:documentation>Texto de tamanho igual a 8 caracteres</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve" />
+            <xs:minLength value="8" />
+            <xs:maxLength value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tipoEnderecoImovel">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações do endereço do imóvel.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:element type="tipoCodigo8Digitos" name="CEP" minOccurs="1" maxOccurs="1" />
+                <xs:element name="endExt" minOccurs="1" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="tipoTexto1_11" name="cEndPost" minOccurs="1" maxOccurs="1" />
+                            <xs:element type="tipoTexto1_60" name="xCidade" minOccurs="1" maxOccurs="1" />
+                            <xs:element type="tipoTexto1_60" name="xEstProvReg" minOccurs="1" maxOccurs="1" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+            <xs:element type="tipoTexto1_255" name="xLgr" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoTexto1_60" name="nro" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoTexto1_156" name="xCpl" minOccurs="0" maxOccurs="1" />
+            <xs:element type="tipoTexto1_60" name="xBairro" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoImovel">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações de operações relacionadas a bens imóveis, exceto obras.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoTexto1_30" name="inscImobFisc" minOccurs="0" maxOccurs="1" />
+            <xs:choice>
+                <xs:element type="tipoTexto8" name="cCIB" minOccurs="1" maxOccurs="1" />
+                <xs:element type="tipoEnderecoImovel" name="end" minOccurs="1" maxOccurs="1" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTribRegular">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações da Tributação Regular</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoCodigo3Digitos" name="CSTReg" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoCodigo6Digitos" name="cClassTribReg" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoDiferimento">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações relacionadas ao diferimento para IBS e CBS</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoNumerico3v2" name="pDifUF" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoNumerico3v2" name="pDifMun" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoNumerico3v2" name="pDifCBS" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoValores_DPS">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações relativas aos valores do serviço prestado para IBS e CBS</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="trib" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de informações relacionados aos tributos IBS e CBS</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element name="gIBSCBS" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                                <xs:annotation>
+                                    <xs:documentation>Grupo de informações relacionadas ao IBS e à CBS</xs:documentation>
+                                </xs:annotation>
+                                <xs:sequence>
+                                    <xs:element type="tipoCodigo3Digitos" name="CST" minOccurs="1" maxOccurs="1" />
+                                    <xs:element type="tipoCodigo6Digitos" name="cClassTrib" minOccurs="1" maxOccurs="1" />
+                                    <xs:element type="tipoCodigo2Digitos" name="cCredPres" minOccurs="0" maxOccurs="1" />
+                                    <xs:element type="tipoTribRegular" name="gTribRegular" minOccurs="0" maxOccurs="1" />
+                                    <xs:element type="tipoDiferimento" name="gDif" minOccurs="0" maxOccurs="1" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="tipoGRefNFSe">
+		<xs:annotation>
+			<xs:documentation>Grupo de NFS-e referenciadas.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element type="tipoChaveAcessoNfse" name="refNFSe" minOccurs="1" maxOccurs="99" />
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:complexType name="tipoIBSCBS_DPS">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações declaradas pelo emitente referentes ao IBS e à CBS (Incluídas no grupo da DPS)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoFinalidadeNFSe" name="finNFSe" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoSimOuNao" name="indFinal" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoCodigo6Digitos" name="cIndOp" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoTpOper" name="tpOper" minOccurs="0" maxOccurs="1" />
+            <xs:element type="tipoGRefNFSe" name="gRefNFSe" minOccurs="0" maxOccurs="1" />
+            <xs:element type="tipoEnteGov" name="tpEnteGov" minOccurs="0" maxOccurs="1" />
+            <xs:element type="tipoImovel" name="imovel" minOccurs="0" maxOccurs="1" />
+            <xs:element type="tipoValores_DPS" name="valores" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoValores">
+        <xs:annotation>
+            <xs:documentation>Grupo de valores brutos referentes ao IBS e à CBS</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoNumerico15v2" name="vBC" minOccurs="1" maxOccurs="1" />
+            <xs:element name="uf" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pIBSUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico3v2" name="pRedAliqUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pAliqEfetUF" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="mun" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pIBSMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico3v2" name="pRedAliqMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pAliqEfetMun" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="fed" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pCBS" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico3v2" name="pRedAliqCBS" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pAliqEfetCBS" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTotIBS">
+        <xs:annotation>
+            <xs:documentation>Grupo de totalizadores referentes ao IBS</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoNumerico15v2" name="vIBSTot" minOccurs="1" maxOccurs="1" />
+            <xs:element name="gIBSCredPres" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de valores referentes ao crédito presumido para IBS</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pCredPresIBS" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vCredPresIBS" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="gIBSUFTot" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de valores referentes ao IBS Estadual</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico15v2" name="vDifUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vIBSUF" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="gIBSMunTot" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de valores referentes ao IBS Municipal</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico15v2" name="vDifMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vIBSMun" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTotCBS">
+        <xs:annotation>
+            <xs:documentation>Grupo de totalizadores referentes ao CBS</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="gCBSCredPres" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de valores referentes ao crédito presumido para CBS</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pCredPresCBS" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vCredPresCBS" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element type="tipoNumerico15v2" name="vDifCBS" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoNumerico15v2" name="vCBS" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoTotalizadores">
+        <xs:annotation>
+            <xs:documentation>Grupo de Totalizadores</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoNumerico15v2" name="vTotNF" minOccurs="1" maxOccurs="1" />
+            <xs:element name="gTribRegular" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de informações de tributação regular</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pAliqEfeRegIBSUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vTribRegIBSUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pAliqEfeRegIBSMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vTribRegIBSMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pAliqEfeRegCBS" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vTribRegCBS" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="gTribCompraGov" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                    <xs:annotation>
+                        <xs:documentation>Grupo de informações da composição do valor do IBS e da CBS em compras governamentais</xs:documentation>
+                    </xs:annotation>
+                    <xs:sequence>
+                        <xs:element type="tipoNumerico2v2" name="pIBSUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vIBSUF" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pIBSMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vIBSMun" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico2v2" name="pCBS" minOccurs="1" maxOccurs="1" />
+                        <xs:element type="tipoNumerico15v2" name="vCBS" minOccurs="1" maxOccurs="1" />
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element type="tipoTotIBS" name="gIBS" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoTotCBS" name="gCBS" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tipoIBSCBS">
+        <xs:annotation>
+            <xs:documentation>Grupo de informações geradas pelo sistema referentes ao IBS e à CBS (Informações Comuns)</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element type="tipoNumerico2v2" name="pRedutor" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoValores" name="valores" minOccurs="1" maxOccurs="1" />
+            <xs:element type="tipoTotalizadores" name="totCIBS" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

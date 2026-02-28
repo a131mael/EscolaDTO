@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" >
+
+    <xs:simpleType name="tipoCpfCnpj">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{3,14}" />
+        </xs:restriction>
+    </xs:simpleType> 
+	
+	<xs:simpleType name="tipoCidade"> 
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4,7}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tipoSerie">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{1,2}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="prestador" type="tipoPrestador" />
+    <xs:complexType name="tipoPrestador">
+        <xs:all>
+            <xs:element name="cpfcnpj" type="tipoCpfCnpj" />
+            <xs:element name="cidade" type="tipoCidade" />           
+        </xs:all>
+    </xs:complexType>
+    
+    <xs:element name="documentos" type="tipoDocumentos" />
+    <xs:complexType name="tipoDocumentos">
+        <xs:sequence>
+            <xs:element name="nfse" type="tipoNfse" minOccurs="1" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+        
+    <xs:complexType name="tipoNfse">
+        <xs:sequence>
+            <xs:element name="numero" type="xs:integer" maxOccurs="1" />
+            <xs:element name="serie" type="tipoSerie" maxOccurs="1" />
+            <xs:element name="observacao" type="xs:string" maxOccurs="1" />            
+            <xs:element name="substituta" type="tipoSubstituta" minOccurs="0" maxOccurs="unbounded" />       
+        </xs:sequence>
+    </xs:complexType>
+        
+    <xs:complexType name="tipoSubstituta">
+        <xs:all>
+            <xs:element name="numero" type="xs:integer" minOccurs="1" />
+            <xs:element name="serie" type="tipoSerie" minOccurs="1" />
+        </xs:all>
+    </xs:complexType>
+    
+</xs:schema>
