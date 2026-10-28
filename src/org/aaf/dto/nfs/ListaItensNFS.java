@@ -6,16 +6,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name="lista")
-@XmlType (propOrder={"codigo_local_prestacao_servico","codigo_item_lista_servico","descritivo","aliquota_item_lista_servico",
+@XmlType (propOrder={"codigo_local_prestacao_servico","codigo_item_lista_servico","codigo_nbs","descritivo","aliquota_item_lista_servico",
 		"situacao_tributaria","valor_tributavel","valor_deducao","valor_issrf","tributa_municipio_prestador"
 		,"unidade_codigo","unidade_quantidade","unidade_valor_unitario"})
 public class ListaItensNFS implements Serializable {
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private String codigo_local_prestacao_servico="8233";
 	private String codigo_item_lista_servico ="80101";
+	// Nomenclatura Brasileira de Serviços -- exigida pela prefeitura desde 2026,
+	// código de "Serviços de educação infantil - pré-escola" (NBS 1.2201.12.00).
+	private String codigo_nbs="122011200";
 	private String descritivo="serviço de educaçao em pre escola";
 	private String aliquota_item_lista_servico="2,0100";
 	private String situacao_tributaria="00";
@@ -38,6 +41,12 @@ public class ListaItensNFS implements Serializable {
 	}
 	public void setCodigo_item_lista_servico(String codigo_item_lista_servico) {
 		this.codigo_item_lista_servico = codigo_item_lista_servico;
+	}
+	public String getCodigo_nbs() {
+		return codigo_nbs;
+	}
+	public void setCodigo_nbs(String codigo_nbs) {
+		this.codigo_nbs = codigo_nbs;
 	}
 	public String getDescritivo() {
 		return descritivo;
